@@ -1,0 +1,32 @@
+﻿@model DelsProject.Models.User
+
+@{
+    ViewData["Title"] = "REGISTER";
+}
+
+<h1>User Registration</h1>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<br/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div class="form-group">
+                <label asp-for="UserType" class="control-label"></label>
+                <select name="UserType">
+                    <option value="Customer">Customer</option>
+                    <option value="Executive">Executive</option>
+                </select>
+                <span asp-validation-for="UserType" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

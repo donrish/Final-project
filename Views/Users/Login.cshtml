@@ -1,0 +1,52 @@
+﻿@model DelsProject.Models.User
+
+@{
+    ViewData["Title"] = "LOGIN";
+}
+
+    <h1>User login</h1>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <br />
+
+        <div class="row">
+            <div class="col-md-4">
+                <form action="Login" method="post">
+                    <table>
+                        <td>
+                        <tr>
+                            <label><h3><b>User type:</b></h3></label>
+                            <br />
+                        </tr>
+                        </td>
+                        <td>
+                        <tr>
+                            <div>
+                                <td>
+                                    @Html.RadioButton("UserType","Customer")
+                                    <label>Customer</label>
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div>
+                                <td>
+                                    @Html.RadioButton("UserType","Executive")
+                                    <label>Executive </label>
+                                </td>
+                            </div>
+                        </tr>
+                    </table>
+                    <br/>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+            <div>
+                <a asp-action="Register">New user? Kindly register here</a>
+            </div>
+       
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
