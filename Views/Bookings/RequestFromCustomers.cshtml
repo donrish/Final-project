@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DelsProject.Models.Booking>
+
+@{
+    ViewData["Title"] = "REQUEST";
+}
+
+<style>
+   table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+</style>
+
+<h1>Order requests</h1>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExecutiveID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PickUpDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PickUpAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightOfPackage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutiveID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickUpDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickUpAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeightOfPackage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("StatusUpdate", "StatusUpdate", new {  id=item.OrderID}) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-controller="Executive" asp-action="MenuPageExecutive">Back to Menu Page</a>
+</div>

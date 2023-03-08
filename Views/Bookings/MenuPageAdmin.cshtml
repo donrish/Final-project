@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "ADMIN PAGE";
+    <style>
+    body{
+        background-color:antiquewhite;
+    }
+        ul {
+            margin: 0
+        }
+            ul li {
+                float: left;
+            }
+            ul li {
+                padding: 20px;
+                list-style: none;
+            }
+    </style>
+
+    <div class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="@Url.Action("Index","Customer")">
+                    <b>List of Customers</b><br />
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index","Executive")">
+                    <b>List of Executives</b>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("LogOut", "Booking")">
+                    <b>Logout</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <br/>
+    <Center>
+        <h1><b><font size="30">Administrator Portal</font></b> </h1>
+        <br />
+        <img src="~/admin.jpg" height="600" width="600" />
+    </Center>
+}

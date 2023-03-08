@@ -1,0 +1,61 @@
+﻿@model DelsProject.Models.Booking
+
+@{
+    ViewData["Title"] = "ADD BOOKING";
+}
+
+<h1>Add booking</h1>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddBooking">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="CustomerID" class="control-label"></label>
+                <input asp-for="CustomerID" class="form-control" readonly />
+                <span asp-validation-for="CustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExecutiveID" class="control-label"></label>
+                <input asp-for="ExecutiveID" class="form-control" />
+                <button onclick="window.location.href = 'http://localhost:4000/Executive/ListOfExecutives';">Executive List</button>
+                <span asp-validation-for="ExecutiveID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PickUpDateTime" class="control-label"></label>
+                <input asp-for="PickUpDateTime" class="form-control" />
+                <span asp-validation-for="PickUpDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PickUpAddress" class="control-label"></label>
+                <input asp-for="PickUpAddress" class="form-control" />
+                <span asp-validation-for="PickUpAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryAddress" class="control-label"></label>
+                <input asp-for="DeliveryAddress" class="form-control" />
+                <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WeightOfPackage" class="control-label"></label>
+                <input asp-for="WeightOfPackage" class="form-control" />
+                <span asp-validation-for="WeightOfPackage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-controller="Customer" asp-action="MenuPageCustomer">Menu page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

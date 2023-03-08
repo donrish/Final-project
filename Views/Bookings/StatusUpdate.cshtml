@@ -1,0 +1,78 @@
+﻿@model DelsProject.Models.Booking
+
+@{
+    ViewData["Title"] = "STATUS";
+}
+
+<h1>Status updation</h1>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="StatusUpdate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrderID" class="control-label"></label>
+                <input readonly asp-for="OrderID" class="form-control" />
+                <span asp-validation-for="OrderID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerID" class="control-label"></label>
+                <input readonly asp-for="CustomerID" class="form-control" />
+                <span asp-validation-for="CustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExecutiveID" class="control-label"></label>
+                <input readonly asp-for="ExecutiveID" class="form-control" />
+                <span asp-validation-for="ExecutiveID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PickUpDateTime" class="control-label"></label>
+                <input readonly asp-for="PickUpDateTime" class="form-control" />
+                <span asp-validation-for="PickUpDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PickUpAddress" class="control-label"></label>
+                 <input readonly asp-for="PickUpAddress" class="form-control"/>
+                <span asp-validation-for="PickUpAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryAddress" class="control-label"></label>
+                <input readonly asp-for="DeliveryAddress" class="form-control" />
+                <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WeightOfPackage" class="control-label"></label>
+                <input readonly asp-for="WeightOfPackage" class="form-control" />
+                <span asp-validation-for="WeightOfPackage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingStatus" class="control-label"></label>
+                <select name="BookingStatus">
+                    <option value="OrderAccepted">Order accepted</option>
+                    <option value="OrderOnProgress">Order in progress</option>
+                    <option value="OrderDelivered">Order delivered</option>
+                    <option value="OrderRejected">Order rejected</option>
+                </select>
+                <span asp-validation-for="BookingStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="RequestFromcustomers">Back to list</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

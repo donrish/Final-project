@@ -1,0 +1,49 @@
+﻿@model DelsProject.Models.AdminLogin
+
+@{
+    ViewData["Title"] = "ADMIN LOGIN";
+}
+
+<style>
+    body{
+        background-color:antiquewhite;
+    }
+</style>
+
+<h1>Admin Login</h1>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="Password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+            <div class="text-danger">
+                @ViewData["Message"]
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Home </a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
