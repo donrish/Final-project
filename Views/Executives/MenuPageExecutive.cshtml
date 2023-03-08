@@ -1,0 +1,45 @@
+﻿@{
+   ViewData["Title"] = "EXECUTIVE MENU PAGE";
+    
+    <style>
+        ul {
+            margin: 0
+        }
+
+            ul li {
+                float: left;
+            }
+
+            ul li {
+                padding: 20px;
+                list-style: none;
+            }
+    </style>
+
+    <div class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="@Url.Action("RequestFromCustomers", "Booking")">
+
+                    <b>Order requests</b><br />
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("RequestFromCustomers", "Booking")">
+                    <b>Status updation</b>
+                </a>
+            <li>
+                <a href="@Url.Action("LogOut", "Executive")">
+                    <b>Logout</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <br/>
+    <center>
+        <h1> WELCOME</h1>
+        <br/>
+        <img src="~/executive.jpg"/>
+    </center>
+        
+    }
